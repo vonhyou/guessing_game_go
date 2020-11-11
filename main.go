@@ -11,6 +11,7 @@ func main() {
   for life > 0 {
     fmt.Print("Input your number:")
     fmt.Scanln(&guess)
+
     if guess < secretNumber {
       fmt.Println("TOO SMALL!")
     } else if guess > secretNumber {
@@ -19,6 +20,7 @@ func main() {
       fmt.Println("YOU WON!")
       break
     }
+
     life--
   }
   if life == 0 {
