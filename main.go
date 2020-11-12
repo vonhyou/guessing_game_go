@@ -8,11 +8,9 @@ import (
 
 func main() {
   fmt.Println("<<GUESSING GAME>>")
-
-  var guess, secretNumber, life int
-
   fmt.Print("Please select the difficulty [H]ard [M]edium [E]asy: ")
 
+  // Use ENUM
   const (
     easyRange, easyLife     int = 100, 7
     mediumRange, mediumLife int = 1000, 10
@@ -25,6 +23,7 @@ func main() {
   seedr := rand.NewSource(time.Now().UnixNano())
   randr := rand.New(seedr)
 
+  var guess, secretNumber, life int
   switch difficulty {
   case "E":
     secretNumber, life = randr.Intn(easyRange), easyLife
